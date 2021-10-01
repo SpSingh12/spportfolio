@@ -1,0 +1,194 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static '\css\calculator.css' %}">
+    <title>JS - Claculator</title>
+    <style>
+        .button{
+            padding: 10px;
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="#" name="calculator" class="main">
+                    <input type="text" name="display" class="display form-control" id="display"> <br>
+
+                    <input type="button" value="C" class="btn btn-primary" id="clear">
+                    <input type="button" value="->" class="btn btn-primary ml-3" onclick="backSpace()">
+                    
+                    <input type="button" value="%" class="btn btn-primary ml-3" onclick="document.calculator.display.value+='%'">
+
+                    <input type="button" value="/" class="btn btn-primary ml-3" onclick="document.calculator.display.value+='/'"> <br><br>
+
+
+                    <input type="button" value="7" class="btn btn-primary" onclick="seven()">
+                    <input type="button" value="8" class="btn btn-primary ml-3" onclick="eight()">
+                    <input type="button" value="9" class="btn btn-primary ml-3" onclick="nine()">
+
+
+                    <input type="button" value="*" class="btn btn-primary ml-3" onclick="document.calculator.display.value+='*'"> <br><br>
+
+                    <input type="button" value="6" class="btn btn-primary" onclick="six()">
+                    <input type="button" value="5" class="btn btn-primary ml-3" onclick="five()">
+                    <input type="button" value="4" class="btn btn-primary ml-3" onclick="four()">
+
+
+                    <input type="button" value="-" class="btn btn-primary ml-3" onclick="document.calculator.display.value+='-'">  <br><br>
+
+                    <input type="button" value="3" class="btn btn-primary" onclick="three()">
+                    <input type="button" value="2" class="btn btn-primary ml-3" onclick="two()">
+                    <input type="button" value="1" class="btn btn-primary ml-3" onclick="one()">
+
+                    <input type="button" value="+" class="btn btn-primary ml-3" onclick="document.calculator.display.value+='+'"> <br><br>
+
+
+                    <input type="button" value="0" class="btn btn-primary" onclick="zero()">
+
+                    <input type="button" value="00" class="btn btn-primary ml-3" onclick="document.calculator.display.value+='00'">
+
+                    <input type="button" value="." class="btn btn-primary ml-3" onclick="document.calculator.display.value+='.'">
+                    <input type="button" value="=" class="btn btn-primary ml-3" onclick="document.calculator.display.value = eval(calculator.display.value)">
+                </form>
+                <a href="{% url 'portfolio' %}" class="button mt-4">Go For Portfolio</a>
+            </div>
+        </div>
+        
+    </div>
+  
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+        
+        document.querySelector('#clear').addEventListener("click", () => {
+            document.querySelector("#display").value = " "
+        })
+
+        const backSpace =() => {
+           const num =  document.querySelector("#display").value.slice(0, -1);
+           document.querySelector("#display").value = num;
+        }
+
+        const one = () => {
+            if(document.querySelector("#display").value == " "){
+                document.querySelector("#display").value = "1";
+            }
+            else{
+                document.querySelector("#display").value = document.querySelector("#display").value + "1";
+            }
+        }
+
+        const two = () => {
+            if(document.querySelector("#display").value == " "){
+                document.querySelector("#display").value = "2";
+            }
+            else{
+                document.querySelector("#display").value = document.querySelector("#display").value + "2";
+            }
+        }
+
+
+        const three = () => {
+            if(document.querySelector("#display").value == " "){
+                document.querySelector("#display").value = "3";
+            }
+            else{
+                document.querySelector("#display").value = document.querySelector("#display").value + "3";
+            }
+        }
+
+        const four = () => {
+            if(document.querySelector("#display").value == " "){
+                document.querySelector("#display").value = "4";
+            }
+            else{
+                document.querySelector("#display").value = document.querySelector("#display").value + "4";
+            }
+        }
+
+        const five = () => {
+            if(document.querySelector("#display").value == " "){
+                document.querySelector("#display").value = "5";
+            }
+            else{
+                document.querySelector("#display").value = document.querySelector("#display").value + "5";
+            }
+        }
+
+        const six = () => {
+            if(document.querySelector("#display").value == " "){
+                document.querySelector("#display").value = "6";
+            }
+            else{
+                document.querySelector("#display").value = document.querySelector("#display").value + "6";
+            }
+        }
+
+        const seven = () => {
+            if(document.querySelector("#display").value == " "){
+                document.querySelector("#display").value = "7";
+            }
+            else{
+                document.querySelector("#display").value = document.querySelector("#display").value + "7";
+            }
+        }
+
+        const eight = () => {
+            if(document.querySelector("#display").value == " "){
+                document.querySelector("#display").value = "8";
+            }
+            else{
+                document.querySelector("#display").value = document.querySelector("#display").value + "8";
+            }
+        }
+
+        const nine = () => {
+            if(document.querySelector("#display").value == " "){
+                document.querySelector("#display").value = "9";
+            }
+            else{
+                document.querySelector("#display").value = document.querySelector("#display").value + "9";
+            }
+        }
+
+        const zero = () => {
+            if(document.querySelector("#display").value == " "){
+                document.querySelector("#display").value = "0";
+            }
+            else{
+                document.querySelector("#display").value = document.querySelector("#display").value + "0";
+            }
+        }
+
+        const point = () => {
+            if(document.querySelector("#display").value == " "){
+                document.querySelector("#display").value = ".";
+            }
+            else{
+                document.querySelector("#display").value = document.querySelector("#display").value + ".";
+            }
+        }
+
+
+    </script>
+  </body>
+</html>

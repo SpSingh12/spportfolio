@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} HOME {% endblock %}
+
+{% block content %}
+
+    <section class="home" id="home">
+        <div class="content">
+            <span class="hi">hi there...</span>
+            <h3>i am <span>Suryapratap singh</span></h3>
+            <p class="info">i am a developer</p>
+            <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, ullam reiciendis temporibus delectus repellat doloribus praesentium eveniet ea nobis harum.</p>
+            <a  href="{% url 'about' %}" class="btn">about me</a>
+        </div>
+
+        <div class="image">
+            <img src="{% static '\images\home-img.jpg' %}" alt="">
+        </div>
+    </section>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

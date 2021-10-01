@@ -1,0 +1,1 @@
+web: gunicorn spportfolio.wsgi --log-file -

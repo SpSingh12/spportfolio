@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static '\images\favicon.png' %}">
+    <title>{% block title %} {% endblock %}</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static '\css\style.css' %}">
+</head>
+
+<body>
+    <!-- custom cursors -->
+    <div class="cursor-1"></div>
+    <div class="cursor-2"></div>
+
+    <div id="menu-bars" class="fas fa-bars"></div>
+    <!-- header section -->
+    <header>
+        
+        <a href="#" class="logo"><span>Suryapratap </span> Singh</a>
+
+        <nav class="navbar">
+            <a href="/">HOME</a>
+            <a href="{% url 'about' %}">ABOUT</a>
+            <a href="{% url 'service' %}">SERVICE</a>
+            <a href="{% url 'experience' %}">EXPERIENCE</a>
+            <a href="{% url 'portfolio' %}">PORTFOLIO</a>
+            <a href="{% url 'contact' %}">CONTACT</a>
+        </nav>
+
+        <div class="follow">
+            <a href="https://m.facebook.com/suryapratapsingh.khangarot.7/" class="fab fa-facebook-f"></a>
+            <a href="https://www.instagram.com/suryapratapsingh_02" class="fab fa-instagram"></a>
+            <a href="https://wa.me/qr/VISH3OTYJW6LC1" class="fab fa-whatsapp"></a>
+            <a href="https://www.linkedin.com/in/surya-pratap-singh-512aa8214" class="fab fa-linkedin"></a>
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+       
+    <!-- custom js file link  -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

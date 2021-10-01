@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} PORTFOLIO {% endblock %}
+
+{% block content %}
+
+<section class="portfolio" id="portfolio">
+    <h1 class="heading"><span>my </span> portfolio</h1>
+    <div class="box-container">
+        <div class="box">
+            <img src="{% static '\images\crud.jpg' %}" alt="">
+            <h3>crud project </h3>
+            <div class="icons">
+                <a href="http://spsdevpr.pythonanywhere.com/" class="fas fa-link"></a>
+                <span>click here...</span>
+                <!-- <a href="" class="fas fa-share"></a>
+                <a href="" class="fas fa-search"></a> -->
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static '\images\blog-2.png' %}" alt="">
+            <h3>blog website</h3>
+            <div class="icons">
+                <a href="https://sp-personal-blog.herokuapp.com/" class="fas fa-link"></a>
+                <span>click here...</span>
+                <!-- <a href="" class="fas fa-share"></a>
+                <a href="" class="fas fa-search"></a> -->
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static '\images\blog.png' %}" alt="">
+            <h3>blog - (2)</h3>
+            <div class="icons">
+                <a href="https://sp-personal-blog.herokuapp.com/" class="fas fa-link"></a>
+                <span>click here...</span>
+                <!-- <a href="" class="fas fa-share"></a>
+                <a href="" class="fas fa-search"></a> -->
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static '\images\tlc1.png' %}" alt="">
+            <h3>entrepreneur <span>website</h3>
+            <div class="icons">
+                <a href="https://tlc-web.herokuapp.com/" class="fas fa-link"></a>
+                <span>click here...</span>
+                <!-- <a href="" class="fas fa-share"></a>
+                <a href="" class="fas fa-search"></a> -->
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static '\images\tlc.png' %}" alt="">
+            <h3>entrepreneur <span>(2)</span></h3>
+            <div class="icons">
+                <a href="https://tlc-web.herokuapp.com/" class="fas fa-link"></a>
+                <span>click here...</span>
+                <!-- <a href="" class="fas fa-share"></a>
+                <a href="" class="fas fa-search"></a> -->
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static '\images\image_uploader.png' %}" alt="">
+            <h3>img-uploader</h3>
+            <div class="icons">
+                <a href="https://image-upload-sp.herokuapp.com/" class="fas fa-link"></a>
+                <span>click here...</span>
+                <!-- <a href="" class="fas fa-share"></a>
+                <a href="" class="fas fa-search"></a> -->
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static '\images\resume.png' %}" alt="">
+            <h3>resume <span>uploader</span></h3>
+            <div class="icons">
+                <a href="https://resume-spdev.herokuapp.com/" class="fas fa-link"></a>
+                <span>click here...</span>
+                <!-- <a href="" class="fas fa-share"></a>
+                <a href="" class="fas fa-search"></a> -->
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static '\images\calculator.png' %}" alt="">
+            <h3>calculator</h3>
+            <div class="icons">
+                <a href="{% url 'calculator' %}" class="fas fa-link"></a>
+                <span>click here...</span>
+                <!-- <a href="" class="fas fa-share"></a>
+                <a href="" class="fas fa-search"></a> -->
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static '\images\validation.png' %}" alt="">
+            <h3>form-validation</h3>
+            <div class="icons">
+                <a href="{% url 'validation' %}" class="fas fa-link"></a>
+                <span>click here...</span>
+                <!-- <a href="" class="fas fa-share"></a>
+                <a href="" class="fas fa-search"></a> -->
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static '\images\construct.png' %}" alt="">
+            <h3>construction <span>(prototype)</span></h3>
+            <div class="icons">
+                <a href="https://construct-spdev.herokuapp.com/" class="fas fa-link"></a>
+                <span>click here...</span>
+                <!-- <a href="" class="fas fa-share"></a>
+                <a href="" class="fas fa-search"></a> -->
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="{% static '\images\construct1.png' %}" alt="">
+            <h3>construction <span>(prototype)</span></h3>
+            <div class="icons">
+                <a href="https://construct-spdev.herokuapp.com/" class="fas fa-link"></a>
+                <span>click here...</span>
+                <!-- <a href="" class="fas fa-share"></a>
+                <a href="" class="fas fa-search"></a> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

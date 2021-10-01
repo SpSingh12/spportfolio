@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM-VALIDATION</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        .H {
+            height: 160px;
+            /* background-color: aqua; */
+            font-size: 30px;
+            font-weight: bolder;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #bg {
+            box-shadow: 0px 0px 18px black;
+        }
+
+        input:hover {
+            border: 2px solid rgb(48, 48, 187);
+        }
+
+        label {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        h1,
+        h3 {
+            font-size: 37px;
+            text-transform: capitalize;
+            margin-bottom: 50px;
+        }
+
+        p {
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        i {
+            margin-right: 5px;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        CONTACT FORM
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-8" id="bg">
+                <h1>get in touch</h1>
+
+                <form action="/action_page.php" method="POST" onsubmit="return formvalidation()" autocomplete="off">
+                    <div>
+                        <div class="form-group ">
+                            <label for="name">NAME :</label>
+                            <input type="text" id="name" class="border-4" autocomplete="off"
+                                style="width: 80%;"><br><span id="n"></span>
+                            <br>
+                            <label class="" for="email">EMAIL : </label>
+                            <input type="text" id="email" class="border-4" style="width: 80%;">
+                            <br><span id="e"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mobile">MOBEILE-:</label>
+                            <input type="text" id="mobile" name="mobile" class="border-4">
+                            <br><span id="m"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="pass1">PASSWORD :</label>
+                            <input type="password" id="pass1" class="border-4">
+
+                            <br><span id="p1"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass2">RE-PASSWORD :</label>
+                            <input type="password" id="pass2" class="border-4">
+                            <input type="checkbox" onclick="func()">SHOW PASS :
+                            <br><span id="p2"></span>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label for="remark">ALL FILLD</label>
+                            <input type="checkbox" id="remark" class="border-4">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="submit" class="btn btn-primary">
+                        </div>
+                </form>
+            </div>
+
+
+        </div>
+        <div class="row ml-5 bg-primary" style="width: 40%">
+            <div class="col-lg-12">
+                <div id="d" style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+                    <h3>contact us</h3>
+                    <p>
+                        <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i> <span
+                            style="font-size: 20px;text-transform: uppercase;">address :</span>
+                        198 west 21th <br>
+                        street, sluite 721 new york ny<br>
+                        10016
+                    </p>
+
+                    <p>
+                        </i> <i class="fa fa-volume-control-phone fa-2x" aria-hidden="true"></i> <span
+                            style="font-size: 20px;text-transform: uppercase;">phone :</span>
+                        + 1234 5678 90
+                    </p>
+
+                    <p>
+                        <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i> <span
+                            style="font-size: 20px;text-transform: uppercase;">email :</span>
+                        123@gmail.com
+                    </p>
+
+                    <p>
+                        <i class="fa fa-globe fa-2x" aria-hidden="true"></i> <span
+                            style="font-size: 20px;text-transform: uppercase;">websites:</span>
+                        suryadeveloper.com
+                    </p>
+                </div>
+                <button type="button" class="btn btn-success" onclick="window.print()">PRINT PAGE</button>
+            </div>
+
+            
+        </div>
+       <div class="container m-4">
+        <a href="{% url 'portfolio' %}" class="btn btn-primary ">Go For Portfolio</a>
+       </div>
+    </div>
+
+
+
+
+    <!-- JavaScript section start form here -->
+    <script>
+        function formvalidation() {
+            // name validation start
+            var name = document.getElementById("name").value;
+            if (name == "") {
+                document.getElementById("n").innerHTML = "ENETR NAME FIRST"
+                document.getElementById("n").style.color = "red";
+                document.getElementById("n").style.fontSize = "20px";
+                return false;
+            }
+            else if (name.length < 5 || name.length > 20) {
+                document.getElementById("n").innerHTML = "name MUST BE 5 TO 20 CHARACTER LONGS."
+                document.getElementById("n").style.color = "red";
+                document.getElementById("n").style.fontSize = "20px";
+                return false;
+            }
+            else {
+                document.getElementById("n").style.display = "none";
+
+            }
+
+
+            //  email validation start
+            var mail = document.getElementById("email").value;
+            var at_position = mail.indexOf("@");
+            var dot_position = mail.lastIndexOf(".");
+
+            if (mail == "") {
+                document.getElementById("e").innerHTML = "EMAIL FILL PLEASE";
+                document.getElementById("e").style.color = "red";
+                return false;
+            }
+            else if (at_position < 1 || dot_position < at_position + 2 || dot_position + 2 >= mail) {
+                document.getElementById("e").innerHTML = "PLEASE ENTER VAALID EMAIL "
+                document.getElementById("e").innerHTML = "PLEASE ENTER CORRECT EMAIL OTHERWISE I WILL BLOCK YOU"
+                document.getElementById("e").style.color = "red";
+                return false;
+
+            }
+            else {
+                document.getElementById("e").style.display = "none";
+            }
+
+
+            
+            var mob = document.getElementById("mobile").value;
+            var phone = /^\d{10}$/;
+            if(mob.match(phone)){
+                document.getElementById("m").innerHTML = "OK"
+                document.getElementById("m").style.color = 'green'
+            }
+        
+            else{
+                document.getElementById("m").innerHTML = "ONLY NUMBERS ALLOWED"
+                document.getElementById("m").style.color = 'red'
+                return false;
+            }
+
+
+            // password validation here !
+            var pass = document.getElementById("pass1").value;
+            var pass2 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+
+            if (pass.match(pass2)) {
+                document.getElementById("p1").innerHTML = "PASSWORD OKK";
+                document.getElementById("p1").style.color = "green";
+                // return true;
+
+            }
+            else {
+                document.getElementById("p1").innerHTML = (`password between 8 to 15 characters <br> one lowercase <br> one upper case <br> one numeric digit <br> one special character `);
+                document.getElementById("p1").style.color = "red";
+                return false;
+            }
+
+
+            var secure2 = document.getElementById("pass2").value;
+            if (secure2 != pass) {
+                document.getElementById("p2").innerHTML = "PASSWORD MUST BE SAME"
+                document.getElementById("p2").style.color = "red";
+                return false;
+            }
+            else {
+                document.getElementById("p2").innerHTML = "*****DONE "
+                document.getElementById("p2").style.color = "green";
+                return true;
+            }
+
+        }
+
+        // this function for use hide and unhide password
+        function func() {
+            var x = document.getElementById("pass1");
+            if (x.type === 'password') {
+                x.type = 'text'
+            } else {
+                x.type = 'password';
+            }
+
+            var y = document.getElementById("pass2");
+            if (y.type === 'password') {
+                y.type = 'text'
+            } else {
+                y.type = 'password';
+            }
+        }
+    </script>
+</body>
+
+</html>
+<!-- function validateAddress() {
+    var address = document.getElementById('address');
+  
+    if (address.value == "") {
+      alert("Address must be filled out");
+      return false;
+    } else if (document.getElementById('address').value.length > 150) {
+      alert("Address cannot be more than 150 characters");
+      return false;
+    } else if (/[^a-zA-Z0-9\-\/]/.test(address)) {
+      alert('Address can only contain alphanumeric characters, hyphens(-) and back slashs(\)');
+      return false;
+    }
+  } -->
